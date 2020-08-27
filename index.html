@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+<style>
+* {
+
+}
+
+body {
+
+}
+
+.container {
+	position: relative;
+	height: 200px;
+	background-color: #ffffff;
+	margin:0;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+
+.image {
+	background-image: url("lamp_off.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 137px;
+	width: 137px;
+	position: absolute;
+}
+
+.image:hover {
+	background-image: url("lamp_on.png");
+}
+
+#l1{left:0px;}
+#l2{left:150px;}
+#l3{left:300px;}
+#l4{left:450px;}
+#l5{left:600px;}
+#l6{left:750px;}
+#l7{left:900px;}
+#l8{left:1050px;}
+
+.btn {
+
+	border-radius: 5px;
+	display: block;
+	margin: 10px;
+	width: 100px;
+	position: relative;
+}
+
+.mid_container {
+	position: absolute;
+	background-color: #555555;
+	border: 1 px solid;
+	width: 100%;
+	height: 70%;
+	padding: 0px;
+	margin: 0px;
+}
+
+.btn_container_left {
+	left: 0px;
+	width: 35%;
+	border: 1px solid red;
+	position: absolute;
+	bottom: 0;
+}
+
+.btn_container_right {
+	left: 35%;
+	width: 40%;
+	border: 1px solid blue;
+	position: absolute;
+	bottom: 0;
+}
+
+.convert {
+	left: 75%;
+	position: absolute;
+	width: 25%;
+	bottom: 0;
+}
+.container_ {
+	margin 5px;
+	padding: 10px;
+	background-color: #a0a0a0;
+}
+
+.btn:hover {
+	background-color: #a0a0a0;
+}
+
+.btn_container_right, .btn_container_left, .convert
+{
+	top: 0;
+	height: 100%;
+}
+
+.btn_container_right, .btn_container_left {
+	border: none;
+	border-right: 5px solid black;
+	border-top: 5px solid black
+}
+
+.convert {
+	border-top: 5px solid black;
+}
+
+#convert_ {
+	margin: 10px;
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+	<div class="image" id="l1"></div>
+	<div class="image" id="l2"></div>
+	<div class="image" id="l3"></div>
+	<div class="image" id="l4"></div>
+	<div class="image" id="l5"></div>
+	<div class="image" id="l6"></div>
+	<div class="image" id="l7"></div>
+	<div class="image" id="l8"></div>
+
+</div>
+<div class="mid_container">
+
+<div class="btn_container_left">
+	<button onclick="input1()" class="btn">0-1</button>
+	<button onclick="input2()" class="btn">0-9</button>
+</div>
+
+<div class="btn_container_right">
+	<button onclick="c(1)" class="btn">and</button>
+	<button onclick="c(2)" class="btn">or</button>
+	<button onclick="c(3)" class="btn">xor</button>
+	<button onclick="c(4)" class="btn">not</button>
+	<button onclick="c(5)" class="btn"><<</button>
+	<button onclick="c(6)" class="btn">>></button>
+	<button onclick="c(7)" class="btn">>>></button>
+</div>
+
+<div class="convert">
+	<div id="convert_">0</div>
+</div>
+
+</div>
+
+<script>
+
+function turn_off()
+{
+	let a = "";
+	for(var i=0; i<8; i++)
+	{
+
+		a = "l" + String(i + 1);
+
+		document.getElementById(a).style.backgroundImage = "url('lamp_off.png')";
+	}
+}
+
+function displayRight(x)
+{
+	let s = x;
+	let i = parseInt(x, 2).toString(10);
+	document.getElementById("convert_").innerHTML = i + "<br>" + s;
+}
+
+function input(x) {
+
+	turn_off();
+	let a = "";
+	const r = 8 - x.length
+	for(var i=0; i<x.length; i++)
+	{
+		a = "l" + String(r+ i + 1);
+		try {
+
+		if(x[i] == "1")
+		{
+			document.getElementById(a).style.backgroundImage = "url('lamp_on.png')";
+		}
+		else if(x[i] == "0")
+		{
+			document.getElementById(a).style.backgroundImage = "url('lamp_off.png')";
+		}
+		else
+		{
+			throw "please input the correct number";
+		}
+
+		}
+		catch(err) {
+			alert(err);
+		}
+	}
+	displayRight(x);
+}
+
+function input1()
+{
+	let p = prompt("input");
+	let y = parseInt(p, 2).toString(10);
+	input(p);
+}
+
+function input2()
+{
+	let p = prompt("input");
+	let y = (p >>> 0).toString(2);
+	input(y);
+}
+function c(n)
+{
+	var an = prompt("input");
+
+	if(n != 4)
+	{
+		var bn = prompt("input2");
+	}
+	var cn;
+	switch (n) {
+		case 1:
+			cn = Number(an) & Number(bn);
+			break;
+		case 2:
+			cn = Number(an) | Number(bn);
+			break;
+		case 3:
+			cn = Number(an) ^ Number(bn);
+			break;
+		case 4:
+			cn = ~ Number(an)
+			break;
+		case 5:
+			cn = Number(an) << Number(bn);
+			break;
+		case 6:
+			cn = Number(an) >> Number(bn);
+			break;
+		case 7:
+			cn = Number(an) >>> Number(bn);
+			break;
+		default:
+			break;
+	}
+	let aa = (cn >>> 0).toString(2);
+	input(aa);
+	document.getElementById("convert_").innerHTML = cn + "<br>" + aa;
+}
+</script>
+</html>
