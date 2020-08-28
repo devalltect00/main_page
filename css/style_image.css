@@ -1,0 +1,258 @@
+* {
+	/* border-bo */
+
+	/* box-shadow: / *  */
+
+	/* // // () */
+
+	/* box-sizing: content-box; */
+}
+
+body{
+	width: 100%;
+	height: 100%;
+
+	/*
+
+	width: 100vw;
+	height: 100vh;
+
+	*/
+
+}
+
+/* jum */
+
+.jumbotron {
+
+	/* height: 100px; */
+
+	/* /&height: 250px; */
+
+	height: 190px;
+}
+
+/*
+
+.text-center hr{
+
+}
+
+*/
+
+/* .text-center hr { */
+
+hr {
+
+	/*
+
+	width: 20px;
+	height: 10px;
+
+	*/
+
+	/*
+
+	width: 20px;
+	border-top: 2px solid black;
+
+	*/
+
+	/*
+
+	width: 100px;
+	border-top: 2px solid black;
+
+	*/
+
+	width: 400px;
+	border-top: 4px solid black;
+
+	/*
+
+	width: 100px;
+	height: 20px;
+
+	*/
+}
+
+/*
+
+/()
+
+\
+
+.img_ {
+	background-color: #eee;
+}
+
+*/
+
+/* section img_ */
+
+/*
+
+section .img_ {
+	/ * width: 50%; * /
+
+	width: 50%;
+}
+
+*/
+
+/* section .img_ { */
+
+/*
+
+.img_ {
+	/ * width: 50%; * /
+
+	width: 50vw;
+
+	background-color: #eee;
+}
+
+*/
+
+.hr_ {
+
+	/* min-height: 400px; */
+
+	/* min-height: 200px; */
+
+	/* min-height: 100px; */
+
+	min-height: 170px;
+}
+
+.img_ {
+	min-height: 400px;
+}
+
+/* fotter */
+
+footer {
+
+	/* background-color: #aaaaaa; */
+
+	background-color: #dddddd;
+
+	/* min-height: 100px; */
+
+	height: 100px;
+
+	/* // // // // & */
+
+	justify-content: center;
+	align-items: center;
+}
+
+/*
+
+footer img {
+	width: 10px;
+	height: 10px;
+}
+
+*/
+
+footer img {
+	width: 20px;
+	height: 20px;
+}
+
+/*
+
+footer row {
+
+}
+
+*/
+
+/*
+
+footer row {
+
+	/ * top: 50%;	 * /
+
+	margin: 10px;
+}
+
+// ()
+
+*/
+
+footer .row {
+
+	/* top: 50%;	 */
+
+	/* // / * margin: 10px; () * / */
+
+	/* // // // // */
+
+
+	/* top: 50%; */
+
+	/*
+
+	justify-content: center;
+	align-items: center;
+
+	*/
+}
+
+footer img, footer p {
+	/* margin: 40px; */
+}
+
+footer .col-sm-12 {
+
+	/* margin: 40px; */
+
+	/* margin: 40px; */
+
+	/* margin-top: 40px; */
+
+	/* margin-top: 50%; */
+
+	/* margin-top: 40px; */
+
+	margin-top: 35px;
+}
+
+footer a {
+	/* text-decoration: none; */
+
+	/* font-size: */
+
+	/* // // */
+
+	/* font */
+
+	color: black;
+	text-decoration: none;
+}
+
+/*
+
+footer a p {
+	text-decoration: none;
+}
+
+footer a p:hover {
+	color: black;
+	text-decoration: none;
+}
+
+*/
+
+/* footer a { */
+
+footer a:hover {
+
+	/* text-decoration: none; */
+
+	/* text-decoration: none; */
+
+	color: black;
+}
